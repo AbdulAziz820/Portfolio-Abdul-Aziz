@@ -2,11 +2,16 @@
 window.onscroll = function () {
     const header = document.querySelector('header');
     const navFixed = header.offsetTop;
+    const toTop = document.querySelector('#to-top');
 
     if (window.scrollY > navFixed) {
         header.classList.add('navbar-fixed');
+        toTop.classList.remove('hidden');
+        toTop.classList.add('flex');
     } else {
         header.classList.remove('navbar-fixed');
+        toTop.classList.remove('flex');
+        toTop.classList.add('hidden');
     }
 };
 
